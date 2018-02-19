@@ -1,0 +1,19 @@
+version: "3.3"
+
+services:
+
+  consumer:
+    build: ./consumer/
+    restart: always
+    tty: true
+    links:
+      - queue
+      - database
+  
+  queue:
+    image: rabbitmq:latest
+    tty: true
+
+  database:
+    build: ./database/
+
