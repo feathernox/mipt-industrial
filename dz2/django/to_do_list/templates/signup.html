@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block title %}sign UP{% endblock %}
+{% block content %}
+{% if error is not None %}
+<h3 style="color:red">u didn't sign up bro....</h3>
+{% endif %}
+<form action="{% url 'signup_action' %}" method="post">
+{% csrf_token %}
+<input type="text" name="username"><br>
+<input type="password" name="password"><br>
+<input type="submit"><br>
+</form>
+{% endblock %}

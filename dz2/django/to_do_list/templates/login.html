@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block title %}Login{% endblock %}
+{% block content %}
+{% if error is not None %}
+<h2 style="color:red">YOU SHALL NOT PASS XD XD XD</h2>
+{% endif %}
+<form action="{% url 'login_action' %}" method="post">
+{% csrf_token %}
+<input type="text" name="username" placeholder="UsErNaMe"><br>
+<input type="password" name="password" placeholder="PaSsWoRd"><br>
+<input type="submit"><br>
+</form>
+{% endblock %}

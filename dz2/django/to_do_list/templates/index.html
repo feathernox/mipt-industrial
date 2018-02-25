@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block title %}To-Do List{% endblock %}
+{% load static %}
+{% block content %}
+<img src="{% static 'rzhu.jpg' %}">
+WELCOME!!!!<br>
+{% if not user.is_authenticated %}
+Sign up  or login, plz))
+{% endif %}
+{% endblock %}
